@@ -13,8 +13,24 @@ import LocalMallIcon from "@mui/icons-material/LocalMall";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 import { navbarConstants } from "./constants";
+import Link from "next/link";
 
-const pages = ["Shop All", "Men", "Women", "About", "Contact"];
+// const pages = ["Shop All", "Men", "Women", "About", "Contact"];
+
+const links = [
+  {
+    label: "Shop All",
+    url: "/",
+  },
+  {
+    label: "Men",
+    url: "/men",
+  },
+  {
+    label: "Women",
+    url: "/women",
+  },
+];
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -80,9 +96,13 @@ const Navbar = () => {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+              {links.map((link) => (
+                <MenuItem key={link.label} onClick={handleCloseNavMenu}>
+                  <Link href={link.url} passHref key={link.label}>
+                    <a>
+                      <Typography textAlign="center">{link.label}</Typography>
+                    </a>
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>
@@ -106,13 +126,15 @@ const Navbar = () => {
             {navbarConstants.storeName}
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
+            {links.map((link) => (
               <Button
-                key={page}
+                key={link.label}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
-                {page}
+                <Link href={link.url} passHref>
+                  <a>{link.label}</a>
+                </Link>
               </Button>
             ))}
           </Box>
