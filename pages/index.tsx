@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
-import { Grid } from "@mui/material";
 import type { NextPage } from "next";
 
 import Layout from "../components/layout/layout";
-import TshirtCard from "../components/t-shirt-card/tShirtCard";
 import { tShirts } from "../data";
+import TShirtGrid from "../components/t-shirt-grid/tShirtGrid";
 
 const Home: NextPage = () => {
   const [loading, setLoading] = useState(false);
@@ -18,13 +17,7 @@ const Home: NextPage = () => {
 
   return (
     <Layout backdrop={loading}>
-      <Grid container spacing={4} justifyContent="center">
-        {tShirts.map((t) => (
-          <Grid item key={t}>
-            <TshirtCard src={t} alt={t} />
-          </Grid>
-        ))}
-      </Grid>
+      <TShirtGrid tShirts={tShirts} />
     </Layout>
   );
 };

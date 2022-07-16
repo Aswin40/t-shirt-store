@@ -1,12 +1,9 @@
-import React, { FC } from "react";
+import React from "react";
 import Img from "next/image";
 import { Box, Paper, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 
-interface TshirtCardProps {
-  src: string;
-  alt: string;
-}
+import { TshirtCardProps } from "./types";
 
 const useStyles = makeStyles({
   paper: {
@@ -23,6 +20,13 @@ const useStyles = makeStyles({
       },
     },
   },
+  imageContainer: {
+    position: "absolute",
+    width: 300,
+    height: 350,
+    top: 10,
+    left: 10,
+  },
   buyNow: {
     background: "#F8F8FF",
     height: 50,
@@ -33,26 +37,26 @@ const useStyles = makeStyles({
     zIndex: 2,
     transition: "opacity 0.5s linear",
     opacity: 0,
+    cursor: "pointer",
   },
 });
 
-const TshirtCard: FC<TshirtCardProps> = ({ src, alt }) => {
+const TshirtCard = ({ tShirt, onBuyNow }: TshirtCardProps) => {
+  const { alt, src } = tShirt;
   const classes = useStyles();
   return (
     <Box>
       <Paper sx={{ padding: 1 }} className={classes.paper}>
-        <Box
-          style={{
-            position: "absolute",
-            width: 300,
-            height: 350,
-            top: 10,
-            left: 10,
-          }}
-        >
+        <Box className={classes.imageContainer}>
           <Img src={src} alt={alt} width={300} height={350} />
         </Box>
-        <Box className={classes.buyNow}>
+        <Box
+          className={classes.buyNow}
+          role="button"
+          onClick={() => {
+            onBuyNow(tShirt);
+          }}
+        >
           <Typography>Buy Now</Typography>
         </Box>
       </Paper>

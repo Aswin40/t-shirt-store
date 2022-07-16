@@ -1,9 +1,8 @@
-import { Grid } from "@mui/material";
 import type { NextPage } from "next";
 import { useState, useEffect } from "react";
-import Layout from "../components/layout/layout";
 
-import TshirtCard from "../components/t-shirt-card/tShirtCard";
+import Layout from "../components/layout/layout";
+import TShirtGrid from "../components/t-shirt-grid/tShirtGrid";
 import { tShirts } from "../data";
 
 const Women: NextPage = () => {
@@ -18,15 +17,7 @@ const Women: NextPage = () => {
 
   return (
     <Layout backdrop={loading}>
-      <Grid container spacing={4} justifyContent="center">
-        {tShirts
-          .filter((t) => t.includes("-g-"))
-          .map((t) => (
-            <Grid item key={t}>
-              <TshirtCard src={t} alt={t} />
-            </Grid>
-          ))}
-      </Grid>
+      <TShirtGrid tShirts={tShirts.filter((t) => t.src.includes("-g-"))} />
     </Layout>
   );
 };

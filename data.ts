@@ -1,4 +1,4 @@
-export const tShirts = [
+export const data = [
   "/assets/black-g-1.jpg",
   "/assets/white-1.jpg",
   "/assets/black-1.jpg",
@@ -32,3 +32,12 @@ export const tShirts = [
   "/assets/t-g-4.jpg",
   "/assets/t-g-6.jpg",
 ];
+
+export const tShirts = data.map((t, index) => ({
+  id: index,
+  name: t,
+  src: t,
+  alt: t,
+  price: index,
+  availableColors: [],
+}));
