@@ -1,12 +1,25 @@
-import { Backdrop, Box, CircularProgress } from "@mui/material";
 import React from "react";
+import { Backdrop, Box, CircularProgress } from "@mui/material";
+import { makeStyles } from "@mui/styles";
 
 import Navbar from "../navbar/navbar";
 import { LayoutProps } from "./types";
 
+const useStyles = makeStyles({
+  content: {
+    display: "flex",
+    flexDirection: "row",
+    width: "100%",
+    justifyContent: "center",
+    padding: 40,
+  },
+  container: { display: "flex", flexDirection: "column", width: "100%" },
+});
+
 const Layout = ({ children, backdrop }: LayoutProps) => {
+  const classes = useStyles();
   return (
-    <div style={{ display: "flex", flexDirection: "column", width: "100%" }}>
+    <div className={classes.container}>
       <Navbar />
       <Backdrop
         open={backdrop}
@@ -14,17 +27,7 @@ const Layout = ({ children, backdrop }: LayoutProps) => {
       >
         <CircularProgress />
       </Backdrop>
-      <Box
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          width: "100%",
-          justifyContent: "center",
-          padding: 40,
-        }}
-      >
-        {children}
-      </Box>
+      <Box className={classes.content}>{children}</Box>
     </div>
   );
 };
