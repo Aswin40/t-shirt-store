@@ -23,13 +23,14 @@ const useStyles = makeStyles({
   },
   price: {
     color: "orange",
+    fontSize: 20,
   },
   color: {
-    marginTop: 10,
+    marginTop: 40,
     marginBottom: 10,
   },
   size: {
-    marginTop: 10,
+    marginTop: 60,
     marginBottom: 10,
   },
   quantity: {
@@ -68,10 +69,12 @@ const TShirtDialog = ({ tShirt, open, onClose }: TshirtDialogProps) => {
                 <Box>
                   <Typography variant="h4">{tShirt?.name}</Typography>
                 </Box>
-                <Box className={classes.price}>
-                  <Typography variant="h5">${tShirt?.price}</Typography>
+                <Box>
+                  <Typography className={classes.price} variant="body2">
+                    ${tShirt?.price}
+                  </Typography>
                 </Box>
-                <Box className={classes.color}>Color</Box>
+                {/* <Box className={classes.color}>Color</Box> */}
                 <Box sx={{ minWidth: 120 }} className={classes.size}>
                   <FormControl fullWidth>
                     <InputLabel id="demo-simple-select-label">Size</InputLabel>
@@ -79,6 +82,7 @@ const TShirtDialog = ({ tShirt, open, onClose }: TshirtDialogProps) => {
                       label="Size"
                       labelId="demo-simple-select-label"
                       size="small"
+                      value="10"
                     >
                       <MenuItem value={10}>Small</MenuItem>
                       <MenuItem value={20}>Medium</MenuItem>
@@ -91,10 +95,11 @@ const TShirtDialog = ({ tShirt, open, onClose }: TshirtDialogProps) => {
                     size="small"
                     type="number"
                     inputProps={{ min: 0 }}
+                    value={1}
                   />
                 </Box>
                 <Box>
-                  <Button variant="outlined" color="secondary">
+                  <Button variant="outlined" color="secondary" fullWidth>
                     Add to cart
                   </Button>
                 </Box>
