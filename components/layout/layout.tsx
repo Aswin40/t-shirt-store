@@ -4,6 +4,7 @@ import { makeStyles } from "@mui/styles";
 
 import Navbar from "../navbar/navbar";
 import { LayoutProps } from "./types";
+import Footer from "../footer/footer";
 
 const useStyles = makeStyles({
   content: {
@@ -29,6 +30,7 @@ const Layout = ({ children, backdrop }: LayoutProps) => {
         <CircularProgress />
       </Backdrop>
       <Box className={classes.content}>{children}</Box>
+      <Footer />
     </div>
   );
 };
