@@ -17,6 +17,9 @@ const useStyles = makeStyles(() => ({
     paddingLeft: 20,
     paddingRight: 20,
   },
+  name: {
+    marginTop: 25,
+  },
   email: {
     marginTop: 25,
   },
@@ -30,6 +33,7 @@ const useStyles = makeStyles(() => ({
 
 const Login = () => {
   const classes = useStyles();
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -44,7 +48,19 @@ const Login = () => {
           className={classes.loginFormContainer}
         >
           <Grid item>
-            <Typography variant="h5">Sign In</Typography>
+            <Typography variant="h5">Sign Up</Typography>
+          </Grid>
+          <Grid item className={classes.name}>
+            <TextField
+              sx={{
+                width: { sm: 200, md: 300 },
+              }}
+              type="text"
+              variant="standard"
+              label="Name"
+              value={name}
+              onChange={(event) => setName(event.target.value)}
+            />
           </Grid>
           <Grid item className={classes.email}>
             <TextField
