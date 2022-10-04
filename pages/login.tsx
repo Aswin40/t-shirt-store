@@ -1,6 +1,7 @@
 import { Button, Grid, Paper, TextField, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { useState } from "react";
+import { logInWithEmailAndPassword } from "../firebase";
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -76,6 +77,7 @@ const Login = () => {
                 width: { sm: 200, md: 300 },
               }}
               variant="contained"
+              onClick={() => logInWithEmailAndPassword(email, password)}
             >
               LOG IN
             </Button>
