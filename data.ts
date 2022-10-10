@@ -120,7 +120,7 @@ export const tShirts = [
     availableColors: ["black", "white"],
   },
   {
-    id: 15,
+    id: 15.1,
     name: "Formality",
     src: "/assets/t-18.jpg",
     alt: "formality",

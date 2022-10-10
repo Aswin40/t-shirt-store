@@ -4,6 +4,7 @@ import type { NextPage } from "next";
 import Layout from "../components/layout/layout";
 import { tShirts } from "../data";
 import TShirtGrid from "../components/t-shirt-grid/tShirtGrid";
+import withAuth from "../hoc/withAuth";
 
 const Home: NextPage = () => {
   const [loading, setLoading] = useState(false);
@@ -22,4 +23,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default withAuth(Home);

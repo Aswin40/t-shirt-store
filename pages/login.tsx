@@ -1,5 +1,6 @@
 import { Button, Grid, Paper, TextField, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import { logInWithEmailAndPassword } from "../firebase";
 
@@ -31,6 +32,8 @@ const useStyles = makeStyles(() => ({
 
 const Login = () => {
   const classes = useStyles();
+  const router = useRouter();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -77,7 +80,11 @@ const Login = () => {
                 width: { sm: 200, md: 300 },
               }}
               variant="contained"
-              onClick={() => logInWithEmailAndPassword(email, password)}
+              onClick={() =>
+                logInWithEmailAndPassword(email, password).then(() => {
+                  router.push("/");
+                })
+              }
             >
               LOG IN
             </Button>

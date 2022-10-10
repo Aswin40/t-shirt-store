@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Layout from "../components/layout/layout";
 import TShirtGrid from "../components/t-shirt-grid/tShirtGrid";
 import { tShirts } from "../data";
+import withAuth from "../hoc/withAuth";
 
 const Women: NextPage = () => {
   const [loading, setLoading] = useState(false);
@@ -22,4 +23,4 @@ const Women: NextPage = () => {
   );
 };
 
-export default Women;
+export default withAuth(Women);
