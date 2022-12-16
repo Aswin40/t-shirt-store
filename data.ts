@@ -153,7 +153,7 @@ export const tShirts = [
   },
   {
     id: 19,
-    name: "/assets/t-23.jpg",
+    name: "Matte Green",
     src: "/assets/t-23.jpg",
     alt: "/assets/t-23.jpg",
     price: 19,
@@ -161,7 +161,7 @@ export const tShirts = [
   },
   {
     id: 20,
-    name: "/assets/t-5.jpg",
+    name: "Snow Leopard",
     src: "/assets/t-5.jpg",
     alt: "/assets/t-5.jpg",
     price: 20,
@@ -169,7 +169,7 @@ export const tShirts = [
   },
   {
     id: 21,
-    name: "/assets/t-7.jpg",
+    name: "Purposeful",
     src: "/assets/t-7.jpg",
     alt: "/assets/t-7.jpg",
     price: 21,
@@ -177,7 +177,7 @@ export const tShirts = [
   },
   {
     id: 22,
-    name: "/assets/t-8.jpg",
+    name: "Sync lover",
     src: "/assets/t-8.jpg",
     alt: "/assets/t-8.jpg",
     price: 22,
@@ -185,7 +185,7 @@ export const tShirts = [
   },
   {
     id: 23,
-    name: "/assets/t-9.jpg",
+    name: "My rules",
     src: "/assets/t-9.jpg",
     alt: "/assets/t-9.jpg",
     price: 23,
@@ -193,7 +193,7 @@ export const tShirts = [
   },
   {
     id: 24,
-    name: "/assets/t-g-10.jpg",
+    name: "Powerful",
     src: "/assets/t-g-10.jpg",
     alt: "/assets/t-g-10.jpg",
     price: 24,
@@ -201,7 +201,7 @@ export const tShirts = [
   },
   {
     id: 25,
-    name: "/assets/t-g-11.jpg",
+    name: "Heart breaker",
     src: "/assets/t-g-11.jpg",
     alt: "/assets/t-g-11.jpg",
     price: 25,
@@ -209,7 +209,7 @@ export const tShirts = [
   },
   {
     id: 26,
-    name: "/assets/t-g-12.jpg",
+    name: "Thankful",
     src: "/assets/t-g-12.jpg",
     alt: "/assets/t-g-12.jpg",
     price: 26,
@@ -217,7 +217,7 @@ export const tShirts = [
   },
   {
     id: 27,
-    name: "/assets/t-g-13.jpg",
+    name: "Polaroids",
     src: "/assets/t-g-13.jpg",
     alt: "/assets/t-g-13.jpg",
     price: 27,
@@ -225,7 +225,7 @@ export const tShirts = [
   },
   {
     id: 28,
-    name: "/assets/t-g-17.jpg",
+    name: "Mist of capricorn",
     src: "/assets/t-g-17.jpg",
     alt: "/assets/t-g-17.jpg",
     price: 28,
@@ -233,7 +233,7 @@ export const tShirts = [
   },
   {
     id: 29,
-    name: "/assets/t-g-21.jpg",
+    name: "Easy going",
     src: "/assets/t-g-21.jpg",
     alt: "/assets/t-g-21.jpg",
     price: 29,
@@ -241,7 +241,7 @@ export const tShirts = [
   },
   {
     id: 30,
-    name: "/assets/t-g-4.jpg",
+    name: "Marine drive",
     src: "/assets/t-g-4.jpg",
     alt: "/assets/t-g-4.jpg",
     price: 30,
@@ -249,7 +249,7 @@ export const tShirts = [
   },
   {
     id: 31,
-    name: "/assets/t-g-6.jpg",
+    name: "Daring dazzle",
     src: "/assets/t-g-6.jpg",
     alt: "/assets/t-g-6.jpg",
     price: 31,

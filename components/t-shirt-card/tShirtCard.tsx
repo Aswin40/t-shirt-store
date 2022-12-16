@@ -46,7 +46,7 @@ const TshirtCard = ({ tShirt, onBuyNow }: TshirtCardProps) => {
   const classes = useStyles();
   return (
     <Box>
-      <Paper sx={{ padding: 1 }} className={classes.paper}>
+      <Paper sx={{ padding: 1 }} className={`${classes.paper} tShirtCard`}>
         <Box className={classes.imageContainer}>
           <Img src={src} alt={alt} width={300} height={350} />
         </Box>

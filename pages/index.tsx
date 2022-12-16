@@ -6,7 +6,7 @@ import { tShirts } from "../data";
 import TShirtGrid from "../components/t-shirt-grid/tShirtGrid";
 import withAuth from "../hoc/withAuth";
 
-const Home: NextPage = () => {
+export const Home: NextPage = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {

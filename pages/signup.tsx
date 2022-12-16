@@ -97,7 +97,7 @@ const Login = () => {
                 registerWithEmailAndPassword(name, email, password)
               }
             >
-              LOG IN
+              SIGN UP
             </Button>
           </Grid>
         </Grid>

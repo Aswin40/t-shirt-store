@@ -11,9 +11,10 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import Link from "next/link";
 
 import { navbarConstants } from "./constants";
-import Link from "next/link";
+import { logout } from "../../firebase";
 
 // const pages = ["Shop All", "Men", "Women", "About", "Contact"];
 
@@ -36,13 +37,29 @@ const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
+  const [userAnchorEl, setUserAnchorEl] = React.useState<null | HTMLElement>(
+    null
+  );
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
   };
 
+  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setUserAnchorEl(event.currentTarget);
+  };
+
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
+  };
+
+  const handleCloseUserMenu = () => {
+    setUserAnchorEl(null);
+  };
+
+  const handleLogout = () => {
+    logout();
+    handleCloseUserMenu();
   };
 
   return (
@@ -143,9 +160,20 @@ const Navbar = () => {
             <IconButton>
               <LocalMallIcon htmlColor="white" />
             </IconButton>
-            <IconButton>
+            <IconButton onClick={handleOpenUserMenu} id="user-button">
               <AccountCircleIcon htmlColor="white" />
             </IconButton>
+            <Menu
+              id="basic-menu"
+              anchorEl={userAnchorEl}
+              open={Boolean(userAnchorEl)}
+              onClose={handleCloseUserMenu}
+              MenuListProps={{
+                "aria-labelledby": "user-button",
+              }}
+            >
+              <MenuItem onClick={handleLogout}>Log out</MenuItem>
+            </Menu>
           </Box>
         </Toolbar>
       </Container>
